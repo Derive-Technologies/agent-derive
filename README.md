@@ -2,6 +2,8 @@
 
 A powerful AI-native workflow orchestration platform built with Next.js 15, TypeScript, Neon PostgreSQL, and Auth0. Create, manage, and automate complex business workflows with AI-powered agents.
 
+🚀 **Live Demo**: [https://agent-derive-3egdq85bv-derive-hq.vercel.app](https://agent-derive-3egdq85bv-derive-hq.vercel.app)
+
 ## ✨ Features
 
 - **🔐 Secure Authentication**: Auth0 integration with multi-tenant support
@@ -136,7 +138,14 @@ Key environment variables in `.env.local`:
 
 ## 🚀 Deployment
 
-### Deploy to Vercel
+### Current Deployment
+
+- **Production**: [https://agent-derive-3egdq85bv-derive-hq.vercel.app](https://agent-derive-3egdq85bv-derive-hq.vercel.app)
+- **Team**: derive-hq
+- **Project**: agent-derive
+- **Status**: ✅ Live
+
+### Deploy Your Own Instance
 
 1. **Fork this repository** to your GitHub account
 
@@ -173,7 +182,7 @@ Key environment variables in `.env.local`:
 5. **Deploy:**
    - Click "Deploy" in Vercel
    - Wait for the build to complete
-   - Your app will be live at `https://agents-derive.vercel.app`
+   - Your app will be live at your Vercel URL
 
 ### Post-Deployment
 
