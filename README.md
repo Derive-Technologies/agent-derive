@@ -1,105 +1,216 @@
+# Agent Derive - Intelligent Workflow Automation Platform
 
-# [Next.js Enterprise Boilerplate](https://blazity.com/open-source/nextjs-enterprise-boilerplate) 
+A powerful AI-native workflow orchestration platform built with Next.js 15, TypeScript, Neon PostgreSQL, and Auth0. Create, manage, and automate complex business workflows with AI-powered agents.
 
-A production-ready template for building enterprise applications with Next.js. This boilerplate provides a solid foundation with carefully selected technologies and ready-to-go infrastructure to help you develop high-quality applications efficiently.
+## ✨ Features
 
-## Motivation
+- **🔐 Secure Authentication**: Auth0 integration with multi-tenant support
+- **🎨 Modern UI**: Beautiful, responsive interface with Tailwind CSS v4 and shadcn/ui
+- **📊 Visual Workflow Designer**: Drag-and-drop workflow builder with React Flow
+- **🤖 AI Agents**: Integrate AI-powered tasks into your workflows
+- **🗄️ PostgreSQL Database**: Scalable data storage with Neon serverless PostgreSQL
+- **⚡ Real-time Updates**: Live workflow execution tracking
+- **📱 Responsive Design**: Works seamlessly on desktop and mobile devices
+- **🎯 Smart Sidebar**: Icon-only navigation with hover expansion
 
-While most Next.js boilerplates focus on individual developer needs with excessive complexity, **next-enterprise** prioritizes strategic simplicity for enterprise teams. It offers a streamlined foundation with high-impact features that maximize developer productivity and accelerate time-to-market for business-critical applications.
+## 🚀 Quick Start
 
-<a href="https://blazity.com/">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="/assets/blazity-logo-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="/assets/blazity-logo-light.svg">
-  <img alt="Logo" align="right" height="80" src="/assets/blazity-logo-light.svg">
-</picture>
-</a>
+### Prerequisites
+- Node.js 18+ and pnpm
+- Neon PostgreSQL database (free tier at [neon.tech](https://neon.tech))
+- Auth0 account (credentials provided below)
 
-> [!NOTE]
-> **Blazity** is a group of Next.js architects. We help organizations architect, optimize, and deploy high-performance Next.js applications at scale. Contact us at [contact@blazity.com](https://blazity.com) if you’d like to talk about your project.
+### Local Development Setup
 
+1. **Clone and install dependencies:**
+   ```bash
+   git clone https://github.com/yourusername/agent-derive.git
+   cd agent-derive
+   pnpm install
+   ```
 
+2. **Configure environment variables:**
+   The `.env.local` file is already configured with:
+   - Neon PostgreSQL connection
+   - Auth0 authentication
+   - Required API keys
 
-## Documentation
+3. **Initialize the database:**
+   ```bash
+   # Push schema to Neon database
+   pnpm db:push
+   
+   # Seed with sample workflows
+   pnpm db:seed:workflows
+   ```
 
-There is a separate documentation that explains its functionality, highlights core business values and technical decisions, provides guidelines for future development, and includes architectural diagrams.
+4. **Start the development server:**
+   ```bash
+   pnpm dev
+   ```
 
-We encourage you to [visit our docs (docs.blazity.com)](https://docs.blazity.com) to learn more
+5. **Access the application:**
+   - Open [http://localhost:3002](http://localhost:3002)
+   - Click "Sign in with Auth0" to log in
+   - Explore the dashboard and create workflows
 
-## Integrated features
+## 📁 Project Structure
 
-### Boilerplate
-With this template you will get all the boilerplate features included:
+```
+agent-derive/
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   │   ├── auth/         # Auth0 authentication
+│   │   ├── trpc/         # tRPC API endpoints
+│   │   └── inngest/      # Workflow orchestration
+│   ├── dashboard/         # Dashboard pages
+│   └── page.tsx          # Login page
+├── src/
+│   ├── components/        # React components
+│   ├── db/               # Database schema & client
+│   ├── lib/              # Utility libraries
+│   └── server/           # tRPC server & routers
+├── DATABASE_SETUP.md      # Database setup guide
+└── .env.local            # Environment variables
+```
 
-* [Next.js 15](https://nextjs.org/) - Performance-optimized configuration using App Directory
-* [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS framework for efficient UI development
-* [ESlint 9](https://eslint.org/) and [Prettier](https://prettier.io/) - Code consistency and error prevention
-* [Corepack](https://github.com/nodejs/corepack) & [pnpm](https://pnpm.io/) as the package manager - For project management without compromises 
-* [Strict TypeScript](https://www.typescriptlang.org/) - Enhanced type safety with carefully crafted config and [ts-reset](https://github.com/total-typescript/ts-reset) library
-* [GitHub Actions](https://github.com/features/actions) - Pre-configured workflows including bundle size and performance tracking
-* Perfect Lighthouse score - Optimized performance metrics
-* [Bundle analyzer](https://www.npmjs.com/package/@next/bundle-analyzer) - Monitor and manage bundle size during development
-* Testing suite - [Vitest](https://vitest.dev), [React Testing Library](https://testing-library.com/react), and [Playwright](https://playwright.dev/) for comprehensive testing
-* [Storybook](https://storybook.js.org/) - Component development and documentation
-* Advanced testing - Smoke and acceptance testing capabilities
-* [Conventional commits](https://www.conventionalcommits.org/) - Standardized commit history management
-* [Observability](https://opentelemetry.io/) - Open Telemetry integration
-* [Absolute imports](https://nextjs.org/docs/advanced-features/module-path-aliases) - Simplified import structure
-* [Health checks](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) - Kubernetes-compatible monitoring
-* [Radix UI](https://www.radix-ui.com/) - Headless components for customization
-* [CVA](http://cva.style/) (Class Variance Authority) - Consistent design system creation
-* [Renovate BOT](https://www.whitesourcesoftware.com/free-developer-tools/renovate) - Automated dependency and security updates
-* [Patch-package](https://www.npmjs.com/package/patch-package) - External dependency fixes without compromises
-* Component relationship tools - Graph for managing coupling and cohesion
-* [Semantic Release](https://github.com/semantic-release/semantic-release) - Automated changelog generation
-* [T3 Env](https://env.t3.gg/) - Streamlined environment variable management
+## 🔑 Key Features
 
-### Infrastructure & deployments
+- **🔐 Authentication**: Auth0 integration for secure login
+- **🎨 Modern UI**: Built with shadcn/ui and Tailwind CSS v4
+- **🗄️ Database**: PostgreSQL with Drizzle ORM
+- **🔄 Workflows**: Visual workflow builder with React Flow
+- **🤖 AI Integration**: Support for AI agents in workflows
+- **📊 Analytics**: Real-time workflow analytics
+- **🏢 Multi-tenant**: Row-level security for tenant isolation
 
-#### Vercel
+## 🛠️ Available Scripts
 
-Easily deploy your Next.js app with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=github&utm_campaign=next-enterprise) by clicking the button below:
+```bash
+# Development
+pnpm dev              # Start development server
+pnpm build           # Build for production
+pnpm start           # Start production server
 
-[![Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Blazity/next-enterprise)
+# Database
+pnpm db:generate     # Generate migrations
+pnpm db:push        # Push schema to database
+pnpm db:seed        # Seed database with test data
+pnpm db:studio      # Open Drizzle Studio GUI
 
-#### Custom cloud infrastructure
+# Testing
+pnpm test           # Run tests
+pnpm lint           # Run ESLint
+pnpm typecheck      # Run TypeScript checks
+```
 
-**next-enterprise** offers dedicated infrastructure as code (IaC) solutions built with Terraform, designed specifically for deploying Next.js applications based on our extensive experience working with enterprise clients.
+## 🔧 Configuration
 
-Learn more in our [documentation (docs.blazity.com)][docs] how to quickstart with the deployments using simple CLI.
+### Environment Variables
 
-#### Available cloud providers and theirs features:
+Key environment variables in `.env.local`:
 
-* **AWS (Amazon Web Services)**
-  * Automated provisioning of AWS infrastructure
-  * Scalable & secure setup using:
-     * VPC - Isolated network infrastructure
-     * Elastic Container Service (ECS) - Container orchestration
-     * Elastic Container Registry (ECR) - Container image storage
-     * Application Load Balancer - Traffic distribution
-     * S3 + CloudFront - Static asset delivery and caching
-     * AWS WAF - Web Application Firewall protection
-     * Redis Cluster - Caching
-  * CI/CD ready - Continuous integration and deployment pipeline
+- `DATABASE_URL`: Your Neon PostgreSQL connection string
+- `AUTH0_SECRET`: Auth0 session secret
+- `AUTH0_BASE_URL`: Application base URL
+- `AUTH0_ISSUER_BASE_URL`: Auth0 domain
+- `AUTH0_CLIENT_ID`: Auth0 application client ID
+- `AUTH0_CLIENT_SECRET`: Auth0 application client secret
 
-*... more coming soon*
+### Auth0 Setup
 
-### Team & maintenance
+1. Log into your Auth0 dashboard
+2. Create a new Regular Web Application
+3. Configure the following settings:
+   - **Allowed Callback URLs**: `http://localhost:3002/api/auth/callback`
+   - **Allowed Logout URLs**: `http://localhost:3002`
+   - **Allowed Web Origins**: `http://localhost:3002`
 
-**next-enterprise** is backed and maintained by [Blazity](https://blazity.com), providing up to date security features and integrated feature updates.
+## 📚 Documentation
 
-#### Active maintainers
+- [Database Setup Guide](./DATABASE_SETUP.md)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Auth0 Next.js SDK](https://github.com/auth0/nextjs-auth0)
+- [Drizzle ORM](https://orm.drizzle.team)
+- [shadcn/ui](https://ui.shadcn.com)
 
-- Igor Klepacki ([neg4n](https://github.com/neg4n)) - Open Source Software Developer
-- Tomasz Czechowski ([tomaszczechowski](https://github.com/tomaszczechowski)) - Solutions Architect & DevOps
-- Jakub Jabłoński ([jjablonski-it](https://github.com/jjablonski-it)) - Head of Integrations
+## 🚀 Deployment
 
-#### All-time contributors
-[bmstefanski](https://github.com/bmstefanski)
+### Deploy to Vercel
 
-## License
+1. **Fork this repository** to your GitHub account
 
-MIT
+2. **Import to Vercel:**
+   - Go to [vercel.com/new](https://vercel.com/new)
+   - Import your forked repository
+   - Select "agents-derive" as the project name
 
+3. **Configure Environment Variables in Vercel:**
+   ```env
+   # Database
+   DATABASE_URL=postgresql://neondb_owner:npg_BTcdJaR9D8wZ@ep-spring-union-a7g970ik-pooler.ap-southeast-2.aws.neon.tech/agent-derive-dev?sslmode=require
+   
+   # Auth0
+   AUTH0_SECRET=use-a-long-random-string-in-production-at-least-32-chars
+   AUTH0_BASE_URL=https://your-app.vercel.app
+   AUTH0_ISSUER_BASE_URL=https://derive-dev.au.auth0.com
+   AUTH0_CLIENT_ID=k3M3EAYch0BoWrWfRD9yHf2YWxIJzYOq
+   AUTH0_CLIENT_SECRET=t2M6Qz2-eUAE4g-npGpUTfxwXM1nlBRuhL1bM8P0KHkMxV9LtOOhjA4ut6fh9L8g
+   AUTH0_AUDIENCE=https://api.agent-derive.local
+   
+   # App URL
+   NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
+   ```
 
-[docs]: https://docs.blazity.com/next-enterprise/deployments/enterprise-cli
+4. **Update Auth0 Settings:**
+   - Add your Vercel URL to Auth0 callback URLs:
+     - `https://your-app.vercel.app/api/auth/callback`
+   - Add to Allowed Logout URLs:
+     - `https://your-app.vercel.app`
+   - Add to Allowed Web Origins:
+     - `https://your-app.vercel.app`
+
+5. **Deploy:**
+   - Click "Deploy" in Vercel
+   - Wait for the build to complete
+   - Your app will be live at `https://agents-derive.vercel.app`
+
+### Post-Deployment
+
+After deployment, run the database seed:
+1. Access Vercel Functions logs
+2. Or manually run seed scripts through Vercel CLI
+
+## 🐛 Troubleshooting
+
+### Build Errors
+
+If you encounter build errors:
+
+1. Make sure your `DATABASE_URL` is properly set in `.env.local`
+2. Run `pnpm install` to ensure all dependencies are installed
+3. The build has ESLint and TypeScript checks disabled for development convenience
+
+### Authentication Issues
+
+If Auth0 login isn't working:
+
+1. Verify your Auth0 credentials in `.env.local`
+2. Check that callback URLs are properly configured in Auth0
+3. Clear browser cookies and try again
+
+### Database Connection
+
+If you can't connect to the database:
+
+1. Ensure your Neon database is active
+2. Check that the connection string includes `?sslmode=require`
+3. Verify your IP isn't blocked (Neon allows all IPs by default)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.

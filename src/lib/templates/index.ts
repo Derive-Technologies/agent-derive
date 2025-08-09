@@ -1,0 +1,5 @@
+export { purchaseApprovalTemplate } from './purchase-approval'
+export { employeeOnboardingTemplate } from './employee-onboarding'
+export { contractReviewTemplate } from './contract-review'
+export { expenseReportTemplate } from './expense-report'
+export type { WorkflowTemplate, WorkflowNode, WorkflowEdge } from './types'
