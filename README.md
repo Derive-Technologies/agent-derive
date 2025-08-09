@@ -32,9 +32,9 @@ A powerful AI-native workflow orchestration platform built with Next.js 15, Type
    ```
 
 2. **Configure environment variables:**
-   The `.env.local` file is already configured with:
-   - Neon PostgreSQL connection
-   - Auth0 authentication
+   Copy `.env.example` to `.env.local` and update with your credentials:
+   - Neon PostgreSQL connection string
+   - Auth0 authentication details
    - Required API keys
 
 3. **Initialize the database:**
@@ -155,21 +155,15 @@ Key environment variables in `.env.local`:
    - Select "agents-derive" as the project name
 
 3. **Configure Environment Variables in Vercel:**
-   ```env
-   # Database
-   DATABASE_URL=postgresql://neondb_owner:npg_BTcdJaR9D8wZ@ep-spring-union-a7g970ik-pooler.ap-southeast-2.aws.neon.tech/agent-derive-dev?sslmode=require
-   
-   # Auth0
-   AUTH0_SECRET=use-a-long-random-string-in-production-at-least-32-chars
-   AUTH0_BASE_URL=https://your-app.vercel.app
-   AUTH0_ISSUER_BASE_URL=https://derive-dev.au.auth0.com
-   AUTH0_CLIENT_ID=k3M3EAYch0BoWrWfRD9yHf2YWxIJzYOq
-   AUTH0_CLIENT_SECRET=t2M6Qz2-eUAE4g-npGpUTfxwXM1nlBRuhL1bM8P0KHkMxV9LtOOhjA4ut6fh9L8g
-   AUTH0_AUDIENCE=https://api.agent-derive.local
-   
-   # App URL
-   NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
-   ```
+   Add the following environment variables in your Vercel project settings:
+   - `DATABASE_URL` - Your Neon PostgreSQL connection string
+   - `AUTH0_SECRET` - A secure random string (at least 32 characters)
+   - `AUTH0_BASE_URL` - Your production Vercel app URL
+   - `AUTH0_ISSUER_BASE_URL` - Your Auth0 domain
+   - `AUTH0_CLIENT_ID` - Your Auth0 application client ID
+   - `AUTH0_CLIENT_SECRET` - Your Auth0 application client secret
+   - `AUTH0_AUDIENCE` - Your Auth0 API audience
+   - `NEXT_PUBLIC_APP_URL` - Your production app URL
 
 4. **Update Auth0 Settings:**
    - Add your Vercel URL to Auth0 callback URLs:
